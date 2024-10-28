@@ -1,0 +1,172 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --default-size: 4px;
+  --container-width: 35%;
+  --container-height: 75%;
+
+  --black: rgb(0, 0, 0);
+  --lightBlack: rgb(64, 64, 64);
+  --lightGrey: rgb(220, 220, 220);
+  --paleBlue: rgb(234, 241, 255);
+  --almostWhite: rgb(245, 245, 245);
+
+  --buttonShadow: rgba(100, 100, 100, 0.5);
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--lightGrey);
+}
+
+.container {
+  position: relative;
+  height: var(--container-height);
+  width: var(--container-width);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: center;
+  padding: calc(var(--default-size) * 3);
+  border: calc(var(--default-size) * 2) solid;
+  border-image: repeating-linear-gradient(to bottom right, var(--lightBlack), var(--lightGrey), var(--lightBlack), var(--lightGrey), var(--lightBlack)) 5;
+  box-shadow: calc(var(--default-size) * 2) calc(var(--default-size) * 2) calc(var(--default-size) * 4) var(--paleBlue);
+  background: var(--almostWhite);
+}
+
+#user-container,
+#expense-container,
+#balances-container {
+  width: 100%;
+  height: 70%;
+  overflow-y: auto;
+}
+
+.user {
+  width: 100%;
+  height: 30%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border: 1px solid var(--lightBlack);
+  border-radius: calc(var(--default-size) * 4);
+  margin-bottom: calc(var(--default-size) * 4);
+}
+
+.expense {
+  width: 100%;
+  height: 30%;
+  display: flex;
+  padding: calc(var(--default-size) * 2);
+  align-items: center;
+  border: 1px solid var(--lightBlack);
+  border-radius: calc(var(--default-size) * 4);
+  margin-bottom: calc(var(--default-size) * 4);
+}
+
+.balance {
+  width: 100%;
+  height: 40%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border: 1px solid var(--lightBlack);
+  border-radius: calc(var(--default-size)* 4);
+  margin-bottom: calc(var(--default-size)* 4);
+}
+
+.user img {
+  width: 75px;
+}
+
+h2 {
+  display: flex;
+  justify-content: center;
+}
+
+.user img,
+.icon img,
+.balance img {
+  border-radius: 50%;
+  background: #DCDCDC;
+  width: 100px;
+  margin-right: calc(var(--default-size) * 3);
+}
+
+.expense img {
+  width: 100px;
+}
+
+form {
+  flex-grow: 1;
+  margin: calc(var(--default-size) * 4);
+  line-height: 1.5;
+}
+
+form input[type="radio"] {
+  margin-right: var(--default-size);
+}
+
+
+.icon input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+}
+
+.icon input[type="radio"]:checked+label img {
+  border: var(--default-size) solid orange;
+  box-shadow: 0 calc(var(--default-size) * 2) calc(var(--default-size) * 3) var(--lightBlack, 0.7), 0 var(--default-size) var(--default-size) var(--lightBlack, 0.5);
+  transform: translateY(-5px);
+  transition: all 0.5s ease;
+}
+
+label img:hover {
+  border: var(--default-size) solid orange;
+}
+
+.amount {
+  margin-left: calc(var(--default-size) * 8);
+  margin-right: calc(var(--default-size) * 12);
+  height: 100px;
+}
+
+#addExpense {
+  position: absolute;
+  top: 50px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: calc(var(--default-size)* 6);
+  padding: 0;
+}
+
+.buttons {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: calc(var(--default-size) * 7);
+}
+
+button {
+  height: 75px;
+  width: 40%;
+  background: var(--lightBlack);
+  color: var(--almostWhite);
+  box-shadow: var(--default-size) var(--default-size) calc(var(--default-size) * 4) var(--buttonShadow);
+  border-radius: calc(var(--default-size) * 3);
+  font-size: calc(var(--default-size) * 4);
+  border: none;
+  cursor: pointer;
+}

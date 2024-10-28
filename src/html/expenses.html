@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Add Expense</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="module" src="../js/addExpense.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <h2>Add an expense</h2>
+    <form id="addExpenseForm">
+      <label>User:</label>
+      <select name="Users" id="users">
+        <option value="" selected disabled>-Select an option-</option>
+      </select><br>
+      <label for="amount">Amount:</label>
+      <input type="number" id="amount" name="amount" step="0.01" placeholder="Example: 18.50" min="0"><br>
+      <label for="title">Title:</label>
+      <input type="text" id="title" name="title" maxlength="15" placeholder="Example: Dinner" required><br>
+    </form>
+    <div class="buttons">
+      <button type="button" onclick="window.location.href='../../home.html'">Back</button>
+      <button id="addNewExpense" type="button">Confirm</button>
+    </div>
+  </div>
+</body>
+</html>

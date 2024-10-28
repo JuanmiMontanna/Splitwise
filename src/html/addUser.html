@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Add User</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="module" src="../js/addUser.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <h2>Add user</h2>
+    <form id="addUserForm">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" maxlength="15" placeholder="Example: Juanmi" required><br>
+      <label>Gender:</label><br>
+      <input type="radio" value="Female" name="gender">Female<br>
+      <input type="radio" value="Male" name="gender" required>Male<br>
+      <label>Icon:</label><br>
+      <div class="icon">
+        <input type="radio" id="icon1" name="icon" value="kaid">
+        <label for="icon1"><img src="../images/kaid.png" alt="Kaid" class="icon"></label>
+
+        <input type="radio" id="icon2" name="icon" value="thermite">
+        <label for="icon2"><img src="../images/thermite.png" alt="Thermite" class="icon"></label>
+
+        <input type="radio" id="icon3" name="icon" value="ash">
+        <label for="icon3"><img src="../images/ash.png" alt="Ash" class="icon"></label>
+
+        <input type="radio" id="icon4" name="icon" value="hibana" required>
+        <label for="icon4"><img src="../images/hibana.png" alt="Hibana" class="icon"></label>
+      </div>
+    </form>
+    <div class="buttons">
+      <button type="button" onclick="window.location.href='users.html'">Back</button>
+      <button id="addUser" type="button">Confirm</button>
+    </div>
+  </div>
+</body>
+</html>
